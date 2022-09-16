@@ -7,31 +7,31 @@ const express = require("express")
 const app = express()
 
 // Add in mongoose
-// const mongoose = require("mongoose")
+const mongoose = require("mongoose")
 // My controllers
-// const photographyController = ('./controllers/photography-controllers.js')
+const photographyController = require('./controllers/photography-controller')
 // Cors and morgan
-// const cors = require("cors")
-// const morgan = require("morgan")
+const cors = require("cors")
+const morgan = require("morgan")
 ///////////////////////////////
 // DATABASE CONNECTION
 ////////////////////////////////
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 // Connection Events
-// mongoose.connection
-//   .on("open", () => console.log("Mic check One Two"))
-//   .on("close", () => console.log("Your are disconnected from mongoose :'("))
-//   .on("error", (error) => console.log(error));
+mongoose.connection
+  .on("open", () => console.log("Mic check One Two"))
+  .on("close", () => console.log("Your are disconnected from mongoose :'("))
+  .on("error", (error) => console.log(error));
 
 
 ///////////////////////////////
 // MIDDLEWEAR
 ////////////////////////////////
-// app.use(express.json()) // Pares json
-// app.use(cors())
-// app.use(morgan("dev"))
-// app.use('/photos', photographyController)
+app.use(express.json()) // Pares json
+app.use(cors())
+app.use(morgan("dev"))
+app.use('/photo', photographyController)
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
