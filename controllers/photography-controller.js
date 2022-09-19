@@ -35,8 +35,9 @@ router.get('/:id', async (req, res) => {
 
 // Photography Update Route
 router.put('/:id', async (req, res) => {
+    console.log(req.params.id, req.body)
     try {
-        res.json(await Photography.findByIdAndUpdate(req.params,id, req.body, {new:true}))
+        res.json(await Photography.findByIdAndUpdate(req.params.id, req.body, {new:true}))
     }catch(error){
         res.status(400).json(error)
     }

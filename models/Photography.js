@@ -13,8 +13,8 @@ const PhotographySchema = new mongoose.Schema ({
     image: String,
     location: String,
     exif: String,
-    digitalprice: Number,
-    printprice: Number,
+    digitalprice: String,
+    printprice: String,
 }, {timestamps: true})
 
 const Photography = mongoose.model("Photography", PhotographySchema)

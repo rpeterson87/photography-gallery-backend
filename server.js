@@ -31,7 +31,7 @@ mongoose.connection
 app.use(express.json()) // Pares json
 app.use(cors())
 app.use(morgan("dev"))
-app.use('/photo', photographyController)
+app.use('/photography', photographyController)
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
@@ -43,4 +43,4 @@ app.get('/', (req, res) => {
 ///////////////////////////////
 // LISTENER
 ////////////////////////////////
-app.listen(PORT, () => console.log(`Would the real slim shady please stand up 😀😀😀`))
+app.listen(PORT, () => console.log(`I feel so alive... 😀😀😀`))
