@@ -1,0 +1,73 @@
+///////////////////////////////
+// DEPENDENCIES
+////////////////////////////////
+
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcrypt");
+
+///////////////////////////////
+// MODELS
+////////////////////////////////
+
+
+const { User } = require("../models");
+const { createUserToken, requireToken } = require('../middleware/auth');
+
+///////////////////////////////
+// ROUTES
+////////////////////////////////
+
+router.get('/user/:id', requireToken, async (req, res) => {
+    try {
+        const foundUser = await User.findById(req.params.id)
+        res.status(201).json({_id: foundUser._id, username: foundUser.username})
+    }catch(error){
+        res.status(400).json({error: error.massage});
+    }
+})
+
+
+// AUTH REGISTER ROUTE (CREATE - POST -> generate a model instance in the db -> create a token)
+
+
+router.post('/register', async (req, res) => {
+    try{
+        const salt = await bcrypt.genSalt(SALT_ROUNDS);
+        const passwordHash = await bcrypt.hash(req.body.password, salt)
+        const pwStore = req.body.password
+        req.body.password = passwordHash
+
+        const newUser = await User.create(req.body);
+        if (newUser) {
+            req.body.password = pwStore;
+            const authenticatedUserToken = createUserToken(req, newUser);
+            req.status(201).json({
+                user: newUser,
+                isLoggedIn: true,
+                token: authenticatedUserToken
+            });
+        } else {
+            res.status(400).json({error: error.message})
+        }
+
+    }catch(error){
+        res.status(400).json({error: error.message})
+    }
+})
+
+// AUTH LOGIN ROUTE (POST - create token if credentials match)
+
+router.post('/login', async (req, res) => {
+    try {
+        const logggingUser = req.body.username;
+        const foundUser = await User.findOne({ username: logggingUser })
+        const token = await createUserToken(req, foundUser)
+        console.log("created token", token)
+        res.status(200).json({ user: foundUser, isLoggedIn: true, token })
+    }catch(error){
+        res.status(400).json({user: error.message})
+    }
+});
+
+module.exports = router;

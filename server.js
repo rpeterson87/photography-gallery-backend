@@ -10,6 +10,7 @@ const app = express()
 const mongoose = require("mongoose")
 // My controllers
 const photographyController = require('./controllers/photography-controller')
+const userController = require('./controllers/auth-controller')
 // Cors and morgan
 const cors = require("cors")
 const morgan = require("morgan")
@@ -32,6 +33,7 @@ app.use(express.json()) // Pares json
 app.use(cors())
 app.use(morgan("dev"))
 app.use('/photography', photographyController)
+app.use('/auth', userController)
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
