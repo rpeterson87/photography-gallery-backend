@@ -10,7 +10,7 @@ const bcrypt = require("bcrypt");
 // MODELS
 ////////////////////////////////
 
-const { User } = require("../models");
+const User  = require("../models/User");
 const { createUserToken, requireToken } = require("../middleware/auth");
 
 ///////////////////////////////
