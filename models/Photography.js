@@ -15,6 +15,11 @@ const PhotographySchema = new mongoose.Schema ({
     exif: String,
     digitalprice: String,
     printprice: String,
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    }
 }, {timestamps: true})
 
 const Photography = mongoose.model("Photography", PhotographySchema)
