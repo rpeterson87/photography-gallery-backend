@@ -37,9 +37,15 @@ The Auth was rather dificult to implament. It requried a complete reworking of t
 This was all done in a little over five days. 
 
 #Link to the frontend github 
+
 https://github.com/rpeterson87/photography-gallery-frontend
 
-# Deployed Site 
+# Deployed Backened
+
+https://thedarkroom.herokuapp.com/photography
+
+# Deployed Frontend Site 
+
 https://tranquil-begonia-062b97.netlify.app/
 
 
