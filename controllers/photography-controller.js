@@ -7,7 +7,7 @@ const { requireToken, handleValidateOwnership } = require('../middleware/auth');
 // ROUTES
 ////////////////////////////////
 
-// Photography INDEX ROUTE
+// Photography Index Route
 router.get("/", async (req, res) => {
   try {
     const photo = await Photography.find({}).populate("owner", "username").exec();
