@@ -14,7 +14,7 @@ This is a site that was built for Photographers to display and sell their art wo
 
 Step 2. Early stages of the design.
 
-<img width="400" src="https://user-images.githubusercontent.com/9807461/191887621-740cda13-8d06-4de8-ae01-6ddadd9f1598.png" </a>
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191887621-740cda13-8d06-4de8-ae01-6ddadd9f1598.png" />
 
 Step 3. The final product 
 
