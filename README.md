@@ -18,9 +18,9 @@ Step 2. Early stages of the design.
 
 Step 3. The final product 
 
-<a href="https://imgur.com/Um7ecNI"><img width="400" src="https://user-images.githubusercontent.com/9807461/191885906-128ee049-fe8a-4482-9dc8-3620c55b4589.png" /></a>
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191885906-128ee049-fe8a-4482-9dc8-3620c55b4589.png" /></a>
 
-<a href="https://imgur.com/Um7ecNI"><img width="400" src="https://user-images.githubusercontent.com/9807461/191886036-ac3d18d1-6582-4bf3-8f74-2916e0d00dc2.png" /></a>
+<img width="400" src="https://user-images.githubusercontent.com/9807461/191886036-ac3d18d1-6582-4bf3-8f74-2916e0d00dc2.png" /></a>
 
 # Technologies Used: 
 
