@@ -1,13 +1,13 @@
 ///////////////////////////////
 // DEPENDENCIES
 ////////////////////////////////
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 
 ///////////////////////////////
 // MODELS
 ////////////////////////////////
-const PhotographySchema = new mongoose.Schema ({
+const PhotographySchema = new mongoose.Schema({
     title: String,
     name: String,
     image: String,
@@ -20,8 +20,8 @@ const PhotographySchema = new mongoose.Schema ({
         ref: "User",
         required: true
     }
-}, {timestamps: true})
+}, { timestamps: true });
 
-const Photography = mongoose.model("Photography", PhotographySchema)
+const Photography = mongoose.model("Photography", PhotographySchema);
 
-module.exports = Photography
+module.exports = Photography;

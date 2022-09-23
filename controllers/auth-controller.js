@@ -10,21 +10,21 @@ const bcrypt = require("bcrypt");
 // MODELS
 ////////////////////////////////
 
-const User  = require("../models/User");
+const User = require("../models/User");
 const { createUserToken, requireToken } = require("../middleware/auth");
 
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
 
-router.get('/user/:id', requireToken, async (req,res)=>{
+router.get('/user/:id', requireToken, async (req, res) => {
   try {
-    const foundUser = await User.findById(req.params.id)
-    res.status(201).json({_id: foundUser._id, username: foundUser.username})
-  }catch (err){
+    const foundUser = await User.findById(req.params.id);
+    res.status(201).json({ _id: foundUser._id, username: foundUser.username });
+  } catch (err) {
     res.status(400).json({ error: err.message });
   }
-})
+});
 
 // AUTH REGISTER ROUTE (CREATE - POST -> generate a model instance in the db -> create a token)
 router.post("/register", async (req, res) => {
@@ -61,7 +61,6 @@ router.post("/login", async (req, res) => {
     const loggingUser = req.body.username;
     const foundUser = await User.findOne({ username: loggingUser });
     const token = await createUserToken(req, foundUser);
-    console.log("created token:", token);
     res.status(200).json({ user: foundUser, isLoggedIn: true, token });
   } catch (err) {
     res.status(400).json({ error: err.message });
