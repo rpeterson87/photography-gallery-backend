@@ -46,7 +46,7 @@ https://thedarkroom.herokuapp.com/photography
 
 # Deployed Frontend Site 
 
-https://tranquil-begonia-062b97.netlify.app/
+https://brilliant-torte-20c083.netlify.app/
 
 
 # Next Steps:
